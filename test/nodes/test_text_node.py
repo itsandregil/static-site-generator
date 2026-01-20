@@ -9,8 +9,8 @@ class TestTextNode(unittest.TestCase):
         self.assertEqual(node, other)
 
     def test_node_texts_are_not_equal(self):
-        node = TextNode("This is a text node", TextType.PLAIN)
-        other = TextNode("This is another text node", TextType.PLAIN)
+        node = TextNode("This is a text node", TextType.TEXT)
+        other = TextNode("This is another text node", TextType.TEXT)
         self.assertNotEqual(node, other)
 
     def test_node_types_are_not_equal(self):
