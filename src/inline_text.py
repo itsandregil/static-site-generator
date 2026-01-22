@@ -1,4 +1,4 @@
-from .text_node import TextType, TextNode
+from .nodes.text_node import TextType, TextNode
 from typing import Literal
 import re
 
