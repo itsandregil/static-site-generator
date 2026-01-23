@@ -1,19 +1,31 @@
-from src.htmlparser import markdown_to_html_node
+import logging
+import os
+import shutil
+
+logging.basicConfig(level=logging.INFO)
+
+
+def copy_files(source: str, destination: str) -> None:
+    for file in os.listdir(source):
+        src_path = os.path.join(source, file)
+        dst_path = os.path.join(destination, file)
+        if os.path.isfile(src_path):
+            shutil.copy(src_path, dst_path)
+            logging.info(f"Copying file from {src_path} to {dst_path}")
+        else:
+            os.mkdir(dst_path)
+            copy_files(src_path, dst_path)
+
+
+def copy_files_to_dir(source: str, destination: str) -> None:
+    if os.path.exists(destination):
+        shutil.rmtree(destination)
+    os.mkdir(destination)
+    copy_files(source, destination)
 
 
 def main():
-    md = """
-    This is **bolded** paragraph
-
-    This is another paragraph with _italic_ text and `code` here
-    This is the same paragraph on a new line
-
-    - This is a list
-    - with items
-    """
-
-    html_node = markdown_to_html_node(md)
-    print(html_node.to_html())
+    copy_files_to_dir("static", "public")
 
 
 if __name__ == "__main__":
