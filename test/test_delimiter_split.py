@@ -1,5 +1,10 @@
 import unittest
-from src.inline_text import split_node_delimiter, split_nodes_images, text_to_textnodes
+
+from src.inline_markdown import (
+    split_node_delimiter,
+    split_nodes_images,
+    text_to_textnodes,
+)
 from src.nodes.text_node import TextNode, TextType
 
 
@@ -54,3 +59,7 @@ class TestInlineMarkdownParsing(unittest.TestCase):
                 TextNode("link", TextType.LINK, "https://boot.dev"),
             ],
         )
+
+
+if __name__ == "__main__":
+    unittest.main()

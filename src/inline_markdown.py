@@ -1,12 +1,11 @@
-from .nodes.text_node import TextType, TextNode
-from typing import Literal
 import re
+from typing import Literal
 
+from src.nodes.text_node import TextNode, TextType
 
 Delimiter = Literal["**", "_", "`"]
 
 
-# TODO: Build support nested inline elements
 def split_node_delimiter(
     old_nodes: list[TextNode],
     delimeter: Delimiter,
@@ -61,7 +60,7 @@ def split_nodes_images(old_nodes: list[TextNode]) -> list[TextNode]:
     return new_nodes
 
 
-def split_nodes_links(old_nodes: list[TextNode]):
+def split_nodes_links(old_nodes: list[TextNode]) -> list[TextNode]:
     new_nodes = []
     for node in old_nodes:
         links = extract_markdown_links(node.text)

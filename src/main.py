@@ -1,9 +1,19 @@
-from text_node import TextNode, TextType
+from src.htmlparser import markdown_to_html_node
 
 
 def main():
-    node = TextNode("This is a dummy node", TextType.PLAIN)
-    print(node)
+    md = """
+    This is **bolded** paragraph
+
+    This is another paragraph with _italic_ text and `code` here
+    This is the same paragraph on a new line
+
+    - This is a list
+    - with items
+    """
+
+    html_node = markdown_to_html_node(md)
+    print(html_node.to_html())
 
 
 if __name__ == "__main__":

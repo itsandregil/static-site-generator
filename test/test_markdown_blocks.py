@@ -1,5 +1,14 @@
 import unittest
-from src.block_text import markdown_to_blocks, block_to_blocktype, is_heading_block, BlockType, is_code_block, is_quote_block
+
+from src.markdown_blocks import (
+    BlockType,
+    block_to_blocktype,
+    is_code_block,
+    is_heading_block,
+    is_quote_block,
+    markdown_to_blocks,
+)
+
 
 class TestMarkdownBlocks(unittest.TestCase):
     def test_markdown_to_blocks(self):
@@ -23,12 +32,16 @@ This is the same paragraph on a new line
         )
 
     def test_is_heading_block(self):
-        blocks = ["# Hello World", "### This is a smaller heading", "###### I'm almost a paragraph"]
+        blocks = [
+            "# Hello World",
+            "### This is a smaller heading",
+            "###### I'm almost a paragraph",
+        ]
         for block in blocks:
             with self.subTest(block):
                 self.assertTrue(is_heading_block(block))
                 self.assertEqual(block_to_blocktype(block), BlockType.HEADING)
-    
+
     def test_is_not_heading(self):
         block = "######## I'm not a heading"
         self.assertFalse(is_heading_block(block))
@@ -39,8 +52,11 @@ This is the same paragraph on a new line
         self.assertTrue(is_code_block(block))
         self.assertEqual(block_to_blocktype(block), BlockType.CODE)
 
-    
     def test_is_quote_block(self):
         block = "> To be or not to be"
         self.assertTrue(is_quote_block(block))
         self.assertEqual(block_to_blocktype(block), BlockType.QUOTE)
+
+
+if __name__ == "__main__":
+    unittest.main()

@@ -1,5 +1,6 @@
-from enum import Enum
 import re
+from enum import Enum
+
 
 class BlockType(Enum):
     PARAGRAPH = "paragraph"
@@ -15,12 +16,13 @@ def markdown_to_blocks(markdown: str) -> list[str]:
     sections = markdown.split("\n\n")
     for text in sections:
         text = text.strip()
-        if not text:
+        if text == "":
             continue
         blocks.append(text)
     return blocks
 
 
+# TODO: Check detections of blocks
 def block_to_blocktype(block: str) -> BlockType:
     if is_heading_block(block):
         return BlockType.HEADING
@@ -34,17 +36,22 @@ def block_to_blocktype(block: str) -> BlockType:
         return BlockType.ORDERED_LIST
     return BlockType.PARAGRAPH
 
+
 def is_heading_block(block: str) -> bool:
     return re.match(r"^#{1,6}\s.*", block) is not None
+
 
 def is_code_block(block: str) -> bool:
     return block.startswith("```\n") and block.endswith("```")
 
+
 def is_quote_block(block: str) -> bool:
     return block.startswith("> ")
 
+
 def is_unordered_list_block(block: str) -> bool:
-    return all(line.startswith("- ") for line in block.split("\n"))
+    return all(line.strip().startswith("- ") for line in block.split("\n"))
+
 
 def is_ordered_list_block(block: str) -> bool:
     lines = block.split("\n")
