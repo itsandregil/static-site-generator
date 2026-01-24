@@ -53,6 +53,7 @@ def is_unordered_list_block(block: str) -> bool:
     return all(line.strip().startswith("- ") for line in block.split("\n"))
 
 
+# FIX: Not parsing the ordered list correctly
 def is_ordered_list_block(block: str) -> bool:
     lines = block.split("\n")
     for i in range(len(lines)):
