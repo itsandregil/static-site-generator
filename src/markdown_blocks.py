@@ -1,4 +1,3 @@
-import re
 from enum import Enum
 
 
@@ -7,8 +6,8 @@ class BlockType(Enum):
     HEADING = "heading"
     CODE = "code"
     QUOTE = "quote"
-    UNORDERED_LIST = "unordered_list"
-    ORDERED_LIST = "ordered_list"
+    ULIST = "unordered_list"
+    OLIST = "ordered_list"
 
 
 def markdown_to_blocks(markdown: str) -> list[str]:
@@ -22,7 +21,6 @@ def markdown_to_blocks(markdown: str) -> list[str]:
     return blocks
 
 
-# TODO: Check detections of blocks
 def block_to_blocktype(block: str) -> BlockType:
     if is_heading_block(block):
         return BlockType.HEADING
@@ -31,32 +29,41 @@ def block_to_blocktype(block: str) -> BlockType:
     elif is_quote_block(block):
         return BlockType.QUOTE
     elif is_unordered_list_block(block):
-        return BlockType.UNORDERED_LIST
+        return BlockType.ULIST
     elif is_ordered_list_block(block):
-        return BlockType.ORDERED_LIST
+        return BlockType.OLIST
     return BlockType.PARAGRAPH
 
 
 def is_heading_block(block: str) -> bool:
-    return re.match(r"^#{1,6}\s.*", block) is not None
+    if block.startswith(("# ", "## ", "### ", "#### ", "##### ", "###### ")):
+        return True
+    return False
 
 
 def is_code_block(block: str) -> bool:
-    return block.startswith("```\n") and block.endswith("```")
+    lines = block.split("\n")
+    return len(lines) > 1 and lines[0].startswith("```") and lines[-1].startswith("```")
 
 
 def is_quote_block(block: str) -> bool:
-    return block.startswith("> ")
+    for line in block.split("\n"):
+        if not line.startswith(">"):
+            return False
+    return True
 
 
 def is_unordered_list_block(block: str) -> bool:
-    return all(line.strip().startswith("- ") for line in block.split("\n"))
-
-
-# FIX: Not parsing the ordered list correctly
-def is_ordered_list_block(block: str) -> bool:
-    lines = block.split("\n")
-    for i in range(len(lines)):
-        if lines[i][0] != i + 1:
+    for line in block.split("\n"):
+        if not line.startswith("- ") and line[2:] != "":
             return False
+    return True
+
+
+def is_ordered_list_block(block: str) -> bool:
+    i = 1
+    for line in block.split("\n"):
+        if not line.startswith(f"{i}. ") and line[2:] != "":
+            return False
+        i += 1
     return True

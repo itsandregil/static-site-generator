@@ -31,9 +31,9 @@ def blocktype_to_html_node(block: str, block_type: BlockType) -> ParentNode:
         text_node = TextNode(text, TextType.CODE)
         html_node = text_node_to_html_node(text_node)
         return ParentNode("pre", [html_node])
-    if block_type == BlockType.ORDERED_LIST:
+    if block_type == BlockType.OLIST:
         return ParentNode("ol", get_list_children(block))
-    if block_type == BlockType.UNORDERED_LIST:
+    if block_type == BlockType.ULIST:
         return ParentNode("ul", get_list_children(block))
     if block_type == BlockType.PARAGRAPH:
         text = get_block_text(block, get_text_lines)
