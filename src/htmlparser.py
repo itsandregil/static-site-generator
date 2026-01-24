@@ -19,7 +19,7 @@ def markdown_to_html_node(markdown: str) -> HTMLNode:
 
 def blocktype_to_html_node(block: str, block_type: BlockType) -> ParentNode:
     if block_type == BlockType.HEADING:
-        num_of_hashtags, text = block.split()
+        num_of_hashtags, text = block.split(maxsplit=1)
         children = text_to_children(text)
         return ParentNode(f"h{len(num_of_hashtags)}", children)
     if block_type == BlockType.QUOTE:
@@ -62,7 +62,9 @@ def get_text_lines(block: str) -> list[str]:
 
 def get_cleaned_lines(block: str) -> list[str]:
     lines = get_text_lines(block)
-    text_lines = [line.split(maxsplit=1)[1] for line in lines]
+    text_lines = [
+        line.split(maxsplit=1)[1] for line in lines if len(line.split(maxsplit=1)) == 2
+    ]
     return text_lines
 
 
