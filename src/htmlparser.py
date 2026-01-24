@@ -77,7 +77,7 @@ def get_list_children(block: str) -> list[HTMLNode]:
     lines = get_cleaned_lines(block)
     for line in lines:
         line_children = text_to_children(line)
-        children.append(ParentNode("il", line_children))
+        children.append(ParentNode("li", line_children))
     return children
 
 
