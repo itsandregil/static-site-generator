@@ -18,8 +18,8 @@ def replace_content(
     return (
         template_content.replace("{{ Title }}", title)
         .replace("{{ Content }}", html)
-        .replace('href="/', f"href={base_path}")
-        .replace('src="/', f"src={base_path}")
+        .replace('href="/', f'href="{base_path}')
+        .replace('src="/', f'src="{base_path}')
     )
 
 
