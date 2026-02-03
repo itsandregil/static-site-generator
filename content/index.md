@@ -1,46 +1,53 @@
-# Tolkien Fan Club
+# Why I Like Running
 
-![JRR Tolkien sitting](/images/tolkien.png)
+Running is one of those things I complain about _while_ doing it and then immediately miss once I stop.  
+This page is a small tribute to sweating, questionable life choices, and endorphins.
 
-Here's the deal, **I like Tolkien**.
+![A person running at sunrise](https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=1200&q=80)
 
-> "I am in fact a Hobbit in all but size."
->
-> -- J.R.R. Tolkien
+## Why I Like Running
 
-## Blog posts
+Here are the _very serious_ and _highly scientific_ reasons why running has my heart:
 
-- [Why Glorfindel is More Impressive than Legolas](/blog/glorfindel)
-- [Why Tom Bombadil Was a Mistake](/blog/tom)
-- [The Unparalleled Majesty of "The Lord of the Rings"](/blog/majesty)
+- It’s socially acceptable to wear big-ass glasses and _all_ kinds of tech wearables at the same time.
+- It lets me buy expensive running shoes without guilt (this is called _self-care_).
+- Problems feel smaller when I’m too tired to think about them.
+- The post-run shower feels like a luxury spa experience.
 
-## Reasons I like Tolkien
+## How I Got Into Running
 
-- You can spend years studying the legendarium and still not understand its depths
-- It can be enjoyed by children and adults alike
-- Disney _didn't ruin it_ (okay, but Amazon might have)
-- It created an entirely new genre of fantasy
+Running wasn’t love at first step. It was more like a slow, awkward friendship.
 
-## My favorite characters (in order)
+1. I started running to “do something different.”
+3. I survived my first 10-minute run.
+4. I accidentally signed up for a race.
+5. Stockholm syndrome kicked in.
+6. Now I run voluntarily.
 
-1. Gandalf
-2. Bilbo
-3. Sam
-4. Glorfindel
-5. Galadriel
-6. Elrond
-7. Thorin
-8. Sauron
-9. Aragorn
+## Favorite Places to Run
 
-Here's what `elflang` looks like (the perfect coding language):
+Some places just make running better (or at least more tolerable):
 
-```
-func main(){
-    fmt.Println("Aiya, Ambar!")
-}
-```
+- Parks with trees and shade
+- Anywhere with a good view that distracts me from my legs
 
-Want to get in touch? [Contact me here](/contact).
+## Helpful & Fun Running Links
 
-This site was generated with a custom-built [static site generator](https://www.boot.dev/courses/build-static-site-generator-python) from the course on [Boot.dev](https://www.boot.dev).
+Here are some app I either use or pretend to use responsibly:
+
+- [Strava](https://www.strava.com/) – proof that I actually ran
+- [Runna](https://www.runna.com/) – how I do not injured myself
+
+## Final Thoughts
+
+Running isn’t always easy, fun, or graceful — but that’s kind of the point.  
+It’s just me, the road, my thoughts, and the promise of snacks afterward.
+
+_Now excuse me while I stretch and dramatically complain about my calves._
+
+## Other Posts About Running
+
+Because apparently running once wasn’t enough:
+
+- [My First Marathon](/blog/my-first-marathon) — featuring questionable decisions, emotional damage, and a finish time under 4 hours.
+- [The Delusion: Running the World Marathon Majors](/blog/the-delusion-world-majors) — where I confidently plan a sub-3 marathon despite all available evidence.

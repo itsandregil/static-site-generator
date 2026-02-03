@@ -1,17 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Fraunces:opsz,wght@9..144,600;700;800&display=swap");
+
+:root {
+    --bg-main: #f4f1ec;
+    --bg-card: #ffffff;
+    --text-main: #1c1f26;
+    --text-muted: #5b6472;
+    --accent: #e5533d;
+    --accent-soft: rgba(229, 83, 61, 0.2);
+    --border-soft: #e6e2da;
+}
+
 body {
-    background-color: #1f1c25;
-    color: #f0e6d1;
-    font-family: "Luminari", "Georgia", serif;
-    line-height: 1.7;
+    background: linear-gradient(180deg, #f4f1ec 0%, #ede8df 100%);
+    color: var(--text-main);
+    font-family: "Inter", system-ui, sans-serif;
+    line-height: 1.75;
     margin: 0;
-    padding: 20px;
-    max-width: 800px;
+    padding: 28px 20px;
+    max-width: 760px;
     margin-left: auto;
     margin-right: auto;
 }
 
-b {
-    font-weight: 900;
+p {
+    margin-bottom: 0.9em;
+    color: var(--text-main);
 }
 
 h1,
@@ -20,18 +33,35 @@ h3,
 h4,
 h5,
 h6 {
-    color: #dda15e;
-    margin-top: 24px;
-    margin-bottom: 16px;
-    text-shadow: 2px 2px 4px #000;
+    font-family: "Fraunces", serif;
+    letter-spacing: -0.02em;
+    margin-top: 1.6em;
+    margin-bottom: 0.5em;
+    color: #121417;
 }
 
 h1 {
-    font-size: 2.5em;
+    font-size: 3em;
+    margin-top: 0;
+    margin-bottom: 0.6;
 }
 
 h2 {
-    font-size: 2em;
+    font-size: 2.1em;
+    position: relative;
+    padding-left: 0.5em;
+    margin-top: 1.8em;
+}
+
+h2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.3em;
+    width: 4px;
+    height: 1.2em;
+    background-color: var(--accent);
+    border-radius: 2px;
 }
 
 h3 {
@@ -45,86 +75,96 @@ h6 {
 }
 
 a {
-    color: #e0a96d;
+    color: var(--accent);
     text-decoration: none;
-    border-bottom: 2px solid #e0a96d;
+    font-weight: 600;
+    border-bottom: 2px solid var(--accent-soft);
+    transition: all 0.15s ease;
 }
 
 a:hover {
-    color: #f4a261;
-    border-color: #f4a261;
+    border-bottom-color: var(--accent);
+    background-color: var(--accent-soft);
 }
 
 ul,
 ol {
-    padding-left: 30px;
+    padding-left: 1.5em;
+    margin-bottom: 1.1em;
 }
 
-code {
-    background-color: #3c3c42;
-    border-radius: 6px;
-    color: #e9c46a;
-    padding: 0.4em 0.6em;
-    font-family: "Courier New", monospace;
-}
-
-pre code {
-    padding: 0;
-}
-
-pre {
-    background-color: #3c3c42;
-    border-radius: 6px;
-    padding: 1em;
-    overflow: auto;
-    box-shadow: 2px 2px 6px #000;
+li {
+    margin-bottom: 0.35em;
 }
 
 blockquote {
-    background-color: #2e2c35;
-    border-left: 4px solid #8d99ae;
-    padding-left: 2em;
-    margin-left: 0;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    padding-right: 0.5em;
-    color: #ddd;
+    margin: 1.6em 0;
+    padding: 1.1em 1.4em;
+    background: var(--bg-card);
+    border-left: 5px solid var(--accent);
+    border-radius: 12px;
     font-style: italic;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
 }
 
 img {
     max-width: 100%;
     height: auto;
+    border-radius: 18px;
+    margin: 1.6em 0;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+code {
+    background-color: #fff1ed;
+    color: #7c2d12;
     border-radius: 6px;
-    border: 3px solid #3c3c42;
-    box-shadow: 3px 3px 6px #000;
+    padding: 0.3em 0.45em;
+    font-size: 0.9em;
+    font-family: "JetBrains Mono", monospace;
+}
+
+pre {
+    background-color: #1c1f26;
+    color: #f4f1ec;
+    border-radius: 14px;
+    padding: 1.4em;
+    overflow-x: auto;
+    margin-bottom: 1.4em;
+}
+
+pre code {
+    background: none;
+    color: inherit;
+    padding: 0;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        var(--border-soft),
+        transparent
+    );
+    margin: 2em 0;
 }
 
 ::-webkit-scrollbar {
-    width: 12px;
-    height: 12px;
-}
-
-::-webkit-scrollbar-track {
-    background: #1f1c25;
-    border-radius: 6px;
+    width: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #3c3c42;
+    background-color: var(--accent-soft);
     border-radius: 6px;
-    border: 3px solid #1f1c25;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: #5a5466;
+    background-color: var(--accent);
 }
 
 * {
     scrollbar-width: thin;
-    scrollbar-color: #3c3c42 #1f1c25;
-}
-
-::-webkit-scrollbar-corner {
-    background: #1f1c25;
+    scrollbar-color: var(--accent-soft) transparent;
 }
