@@ -3,7 +3,7 @@
 Running is one of those things I complain about _while_ doing it and then immediately miss once I stop.  
 This page is a small tribute to sweating, questionable life choices, and endorphins.
 
-![A person running at sunrise](https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=1200&q=80)
+![A person running at sunrise](/images/morning-run.jpg)
 
 ## Why I Like Running
 
