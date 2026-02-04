@@ -1,7 +1,7 @@
 [project]
 name = "static-site-generator"
 version = "0.1.0"
-description = "Add your description here"
+description = "A static site generator built in Python"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = []
